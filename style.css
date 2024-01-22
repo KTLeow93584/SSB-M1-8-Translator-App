@@ -1,0 +1,72 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textfield-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0px;
+}
+
+.language-selector {
+  padding: 5px 5px;
+  margin: 0px 20px;
+}
+
+#swap-button {
+  width: 25px;
+  height: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 55px;
+}
+
+#swap-button:hover {
+  cursor: pointer;
+}
+
+.header-text {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#input-text {
+  background-color: white;
+  text-align: left;
+  resize: none;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#output-text {
+  background-color: #E1EEF2;
+  text-align: left;
+  resize: none;
+  font-size: 14px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.output-error-text {
+  color: orangered;
+}
+
+#result {
+  font-family: "Arial", "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-style: italic;
+}

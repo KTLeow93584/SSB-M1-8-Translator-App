@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>
+    Translator App - Leow Kean Tat (Kaz)
+  </title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="script.js" rel="preload" type="script" />
+</head>
+
+<body>
+  <h1>
+    Simple Translator App
+  </h1>
+  
+  <img src="translator-man.png" alt="" height="300px">
+  <div class="textfield-group">
+    <div>
+      <div class="options-group">
+        <p class="header-text">From:</p>
+  
+        <select onchange="translateText()" id="input-language-selector" class="language-selector">
+          <option value="malay" selected="selected">Malay</option>
+          <option value="spanish">Spanish</option>
+          <option value="japanese">Japanese</option>
+          <option value="english">English</option>
+        </select>
+      </div>
+      <textarea oninput="translateText()" id="input-text" rows="4" cols="50" placeholder="Type your text here."></textarea>
+    </div>
+    
+    <img src="swap.png" id="swap-button" onclick="swapInputOutput()"/>
+    
+    <div>
+      <div class="options-group">
+        <p class="header-text">To:</p>
+
+        <select onchange="translateText()" id="output-language-selector" class="language-selector">
+          <option value="malay">Malay</option>
+          <option value="spanish">Spanish</option>
+          <option value="japanese">Japanese</option>
+          <option value="english" selected="selected">English</option>
+        </select>
+      </div>
+      <textarea id="output-text" rows="4" cols="50" placeholder="Output here." readonly></textarea>
+    </div>
+  </div>
+  <p id="result"></p>
+  
+  <script type="module" src="./scripts/script.js"></script>
+
+  <!--
+      Preload additional modules in web page to prevent the issue whereby, if user quickly modified the text area input within the first second,
+      it would cause errors due to undefined dependencies.
+  -->
+  <script type="module" src="./scripts/translate.js"></script>
+  
+  <script type="module" src="./scripts/language-en.js"></script>
+  <script type="module" src="./scripts/language-es.js"></script>
+  <script type="module" src="./scripts/language-jp.js"></script>
+  <script type="module" src="./scripts/language-my.js"></script>
+  <!--
+      ChatGPT Prompt:
+      
+      In Javascript, when having a text area's "onchange" trigger  on the first second after the webpage loads, the module
+      dependencies returns undefined and fails to execute. After that second, everything works normally. Why does that happen?
+      -----------------------------------------------------------------------------------------
+      ChatGPT Query:
+    
+      The issue you're describing sounds like a timing problem, where the module dependencies are not yet fully loaded or defined
+      when the "onchange" event triggers in the first second after the webpage loads. Without seeing your code, I can provide some
+      general guidance on why this might be happening and how to address it:
+  
+      1. Ensure that the script containing the module dependencies is loaded before the script that handles the "onchange" event.
+      You can use the defer attribute in the script tag to ensure scripts are executed in order of appearance. For example:
+      
+      This ensures that the "module-dependencies.js" script is loaded and executed before the "your-script.js" script.
+      (...)
+  -->
+</body>
+
+</html>
