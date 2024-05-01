@@ -9,6 +9,12 @@
 - Clone, fork or download the project as zip.
 - Open up the "index.html" file on your browser.
 
+## List of Words Currently Supported
+
+1. Morning
+2. Afternoon
+3. Night
+
 ## Preview
 <div align="center">
   <a href="./assets/preview-1.png">
